@@ -21,8 +21,8 @@ export default function Login() {
       <Card className="w-full max-w-md shadow-lg">
         {/* Header */}
         <CardHeader>
-          <CardTitle className="text-center text-2xl font-bold">
-            My Awesome App
+          <CardTitle className="text-center text-2xl font-bold text-blue-500">
+            HabitTracker
           </CardTitle>
           <CardDescription className="text-center">
             Hello! Welcome back 👋
@@ -41,7 +41,6 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="mt-1"
-                
               />
             </div>
 
@@ -57,7 +56,9 @@ export default function Login() {
               />
             </div>
 
-            <Button className="w-full">Login</Button>
+            <Button className="w-full bg-blue-500 hover:bg-blue-600 transition-all duration-200">
+              Login
+            </Button>
           </div>
 
           {/* Divider */}
