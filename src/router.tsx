@@ -1,6 +1,6 @@
 // src/router.tsx
 import { createBrowserRouter } from "react-router";
-import App from "./App";
+import Layout from "@/layouts/Layout";
 import Login from "@/features/login";
 import Home from "@/features/home";
 import About from "@/features/about";
@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
     children: [
       {
         index: true,
