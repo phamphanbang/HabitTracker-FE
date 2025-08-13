@@ -110,6 +110,35 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.serika-dark {
+  --background: #2c2e31; /* dark-gray → page background */
+  --foreground: #e5e5e5; /* derived from lightest text tone for contrast */
+
+  --card: #323437; /* grey → slightly lighter than bg for cards */
+  --card-foreground: #e5e5e5;
+
+  --popover: #323437;
+  --popover-foreground: #e5e5e5;
+
+  --primary: #e2b714; /* yellow accent */
+  --primary-foreground: #1d1f21; /* dark for contrast on yellow */
+
+  --secondary: #646669; /* light-gray for secondary surfaces */
+  --secondary-foreground: #e5e5e5;
+
+  --muted: #646669; /* same as secondary for consistency */
+  --muted-foreground: #a0a0a0;
+
+  --accent: #e2b714; /* same as primary to keep Serika feel */
+  --accent-foreground: #1d1f21;
+
+  --destructive: #ef4444; /* Tailwind's red-500 for errors */
+  --border: #3a3c3f; /* slightly lighter than background */
+  --input: #3a3c3f;
+  --ring: #e2b714; /* yellow ring focus */
+}
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

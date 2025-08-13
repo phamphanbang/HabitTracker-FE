@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function App() {
   return (
-    <div className="p-4">
+    <div className="pt-6">
       <nav className="flex gap-4">
         <Button asChild>
           <Link to="/">Home</Link>

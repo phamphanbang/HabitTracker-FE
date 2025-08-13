@@ -17,11 +17,11 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="serika-dark min-h-screen flex items-center justify-center bg-background text-foreground">
       <Card className="w-full max-w-md shadow-lg">
         {/* Header */}
         <CardHeader>
-          <CardTitle className="text-center text-2xl font-bold text-blue-500">
+          <CardTitle className="text-center text-2xl font-bold ">
             HabitTracker
           </CardTitle>
           <CardDescription className="text-center">
@@ -56,7 +56,7 @@ export default function Login() {
               />
             </div>
 
-            <Button className="w-full bg-blue-500 hover:bg-blue-600 transition-all duration-200">
+            <Button className="w-full text-foreground bg-background hover:bg-foreground hover:text-background transition-all duration-200">
               Login with this
             </Button>
           </div>
@@ -73,7 +73,7 @@ export default function Login() {
           <div className="flex gap-3">
             <Button
               variant="outline"
-              className="flex-1 flex items-center gap-2"
+              className="flex-1 flex items-center gap-2 hover:bg-foreground"
             >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
@@ -84,7 +84,7 @@ export default function Login() {
             </Button>
             <Button
               variant="outline"
-              className="flex-1 flex items-center gap-2"
+              className="flex-1 flex items-center gap-2 hover:bg-foreground"
             >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"

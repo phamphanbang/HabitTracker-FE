@@ -1,78 +1,90 @@
 import { Outlet } from "react-router";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Link } from "react-router";
-import { ChevronDown, CalendarCheck } from "lucide-react";
+import {
+  CalendarCheck,
+  ClipboardList,
+  Settings,
+  Info,
+  User,
+} from "lucide-react";
 
 export default function Layout() {
   return (
-    <div className="min-h-screen flex flex-col ">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-          {/* App name */}
+    <div className="serika-dark pt-6 min-h-screen flex flex-col bg-background text-foreground">
+      {/* Top navigation bar */}
+      <header className="bg-background/80 backdrop-blur-sm">
+        <div className="max-w-5xl mx-auto h-14 flex items-center justify-between">
+          {/* Left: Logo + Nav */}
           <div className="flex items-center gap-6">
-            {/* App title */}
-            <Link to="/" className="flex gap-2 text-lg font-bold text-blue-500">
-              <CalendarCheck />
+            <Link
+              to="/"
+              className="flex items-center gap-2 text-3xl font-bold "
+            >
+              <CalendarCheck className="w-7 h-7 text-primary" />
               HabitTracker
             </Link>
 
-            {/* Navigation links */}
-            <nav className="flex items-center gap-4">
+            <nav className="flex items-center gap-6 text-lg font-medium">
               <Link
                 to="/dashboard"
-                className="text-gray-600 hover:text-gray-900 transition"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Dashboard
+                <ClipboardList className="w-5 h-5 " strokeWidth={2.5} />
               </Link>
               <Link
                 to="/settings"
-                className="text-gray-600 hover:text-gray-900 transition"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Settings
+                <Settings className="w-5 h-5" strokeWidth={2.5} />
               </Link>
               <Link
                 to="/about"
-                className="text-gray-600 hover:text-gray-900 transition"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                About
+                <Info className="w-5 h-5" strokeWidth={2.5} />
               </Link>
             </nav>
           </div>
 
-          {/* Profile dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors focus:outline-none px-2 py-1">
-                <Avatar className="w-9 h-9">
-                  <AvatarImage
-                    src="https://via.placeholder.com/150"
-                    alt="User"
-                  />
-                  <AvatarFallback>U</AvatarFallback>
-                </Avatar>
-                <ChevronDown className="w-4 h-4 text-gray-500" />
-              </button>
-            </DropdownMenuTrigger>
+          <div className="relative group inline-block">
+            {/* Trigger button */}
+            <button className="flex items-center gap-2 px-2 py-1 text-muted-foreground hover:text-foreground transition-colors">
+              <User className="w-5 h-5" strokeWidth={2.5} />
+              {"user name"}
+            </button>
 
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+            {/* Dropdown wrapper */}
+            <div className="absolute right-0 top-full">
+              {/* Invisible hover bridge */}
+              <div className="h-2 w-full bg-transparent pointer-events-none"></div>
+
+              {/* Actual dropdown menu */}
+              <div
+                className="w-40 bg-card border border-border rounded-md shadow-md 
+        opacity-0 group-hover:opacity-100 
+        translate-y-1 group-hover:translate-y-0
+        transition-all duration-150 ease-out
+        pointer-events-none group-hover:pointer-events-auto text-sm"
+              >
+                <div className="hover:bg-muted px-4 py-2 cursor-pointer rounded-t-md">
+                  Profile
+                </div>
+                <div className="hover:bg-muted px-4 py-2 cursor-pointer">
+                  Settings
+                </div>
+                <div className="hover:bg-muted px-4 py-2 cursor-pointer rounded-b-md">
+                  Logout
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
-      {/* Main content */}
-      <main className="flex-1 bg-gray-50 p-6">
-        <Outlet />
+      <main className="flex-1 flex justify-center">
+        <div className="w-full max-w-5xl">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
