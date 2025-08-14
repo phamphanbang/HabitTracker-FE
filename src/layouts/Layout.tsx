@@ -1,12 +1,7 @@
 import { Outlet } from "react-router";
 import { Link } from "react-router";
-import {
-  CalendarCheck,
-  ClipboardList,
-  Settings,
-  Info,
-  User,
-} from "lucide-react";
+import { CalendarCheck, ClipboardList, Settings, Info } from "lucide-react";
+import { UserDropdown } from "./UserDropdown";
 
 export default function Layout() {
   return (
@@ -46,38 +41,34 @@ export default function Layout() {
             </nav>
           </div>
 
-          <div className="relative group inline-block">
-            {/* Trigger button */}
+          {/* <div className="relative inline-block group">
+            
             <button className="flex items-center gap-2 px-2 py-1 text-muted-foreground hover:text-foreground transition-colors">
               <User className="w-5 h-5" strokeWidth={2.5} />
               {"user name"}
             </button>
 
-            {/* Dropdown wrapper */}
-            <div className="absolute right-0 top-full">
-              {/* Invisible hover bridge */}
-              <div className="h-2 w-full bg-transparent pointer-events-none"></div>
-
-              {/* Actual dropdown menu */}
-              <div
-                className="w-40 bg-card border border-border rounded-md shadow-md 
-        opacity-0 group-hover:opacity-100 
-        translate-y-1 group-hover:translate-y-0
-        transition-all duration-150 ease-out
-        pointer-events-none group-hover:pointer-events-auto text-sm"
-              >
-                <div className="hover:bg-muted px-4 py-2 cursor-pointer rounded-t-md">
-                  Profile
-                </div>
-                <div className="hover:bg-muted px-4 py-2 cursor-pointer">
-                  Settings
-                </div>
-                <div className="hover:bg-muted px-4 py-2 cursor-pointer rounded-b-md">
-                  Logout
-                </div>
+          
+            <div
+              className="absolute right-0 top-full 
+      w-40 bg-card border border-border rounded-md shadow-md 
+      opacity-0 group-hover:opacity-100 
+      translate-y-1 group-hover:translate-y-0
+      transition-all duration-150 ease-out
+      pointer-events-none group-hover:pointer-events-auto text-sm "
+            >
+              <div className="hover:bg-muted px-4 py-2 cursor-pointer rounded-t-md">
+                Profile
+              </div>
+              <div className="hover:bg-muted px-4 py-2 cursor-pointer">
+                Settings
+              </div>
+              <div className="hover:bg-muted px-4 py-2 cursor-pointer rounded-b-md">
+                Logout
               </div>
             </div>
-          </div>
+          </div> */}
+          <UserDropdown />
         </div>
       </header>
 
