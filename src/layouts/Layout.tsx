@@ -5,9 +5,9 @@ import { UserDropdown } from "./UserDropdown";
 
 export default function Layout() {
   return (
-    <div className="serika-dark pt-6 min-h-screen flex flex-col bg-background text-foreground">
+    <div className="serika-dark relative pt-6 min-h-screen flex flex-col bg-background text-foreground">
       {/* Top navigation bar */}
-      <header className="bg-background/80 backdrop-blur-sm">
+      <header className="bg-background/80 backdrop-blur-sm z-10">
         <div className="max-w-5xl mx-auto h-14 flex items-center justify-between">
           {/* Left: Logo + Nav */}
           <div className="flex items-center gap-6">
@@ -68,11 +68,11 @@ export default function Layout() {
               </div>
             </div>
           </div> */}
-          <UserDropdown />
+          <UserDropdown  />
         </div>
       </header>
 
-      <main className="flex-1 flex justify-center">
+      <main className="flex-1 flex justify-center z-0">
         <div className="w-full max-w-5xl">
           <Outlet />
         </div>

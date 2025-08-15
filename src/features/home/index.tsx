@@ -9,7 +9,7 @@ export default function Home() {
   const today = new Date();
 
   return (
-    <div className="flex gap-6 p-4">
+    <div className="flex gap-6 pt-4">
       {/* Left side - 2/3 */}
       <div className="flex flex-col gap-4 w-2/3">
         {/* Action Bar */}
