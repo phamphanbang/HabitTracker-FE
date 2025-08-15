@@ -9,11 +9,11 @@ export default function Home() {
   const today = new Date();
 
   return (
-    <div className="flex gap-6 pt-4">
-      {/* Left side - 2/3 */}
-      <div className="flex flex-col gap-4 w-2/3">
+    <div className="flex gap-6 pt-4 flex-1 min-h-0">
+      {/* Left side - Task Section */}
+      <div className="flex flex-col gap-4 w-2/3 min-h-0">
         {/* Action Bar */}
-        <div className="flex items-center justify-between bg-card p-4 rounded-lg border border-border">
+        <div className="flex-shrink-0 flex items-center justify-between bg-card p-4 rounded-lg border border-border">
           <div className="flex items-center gap-2">
             <Button variant="outline" size="icon">
               <ChevronLeft className="w-4 h-4" />
@@ -43,14 +43,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Task List */}
+        {/* Scrollable Task List */}
         <TaskList />
       </div>
 
-      {/* Right side - 1/3 */}
+      {/* Right side - Calendar */}
       <div className="w-1/3 flex justify-center">
         <Card>
-          <CardContent >
+          <CardContent>
             <Calendar
               mode="single"
               selected={today}
